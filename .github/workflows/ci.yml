@@ -45,3 +45,6 @@ jobs:
       run: |
         cd Build
         yarn build
+    - name: Status
+      run: |
+        git status | grep -q "nothing to commit, working tree clean"

@@ -11,6 +11,7 @@ namespace BK2K\BootstrapPackage\Service;
 
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
+use TYPO3\CMS\Core\Package\Event\AfterPackageActivationEvent;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -22,7 +23,7 @@ class InstallService
     /**
      * @var string
      */
-    const EXT_KEY = 'bootstrap_package';
+    protected const EXT_KEY = 'bootstrap_package';
 
     /**
      * @var string
@@ -35,6 +36,11 @@ class InstallService
     public function __construct()
     {
         $this->messageQueueByIdentifier = 'extbase.flashmessages.tx_extensionmanager_tools_extensionmanagerextensionmanager';
+    }
+
+    public function __invoke(AfterPackageActivationEvent $event): void
+    {
+        $this->generateApacheHtaccess($event->getPackageKey());
     }
 
     /**

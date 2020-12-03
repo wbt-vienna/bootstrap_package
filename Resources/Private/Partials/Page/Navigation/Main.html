@@ -50,7 +50,13 @@
                                         </f:if>
                                     </span>
                                 </f:if>
-                                <span class="nav-link-text">{item.title}<f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if></span>
+                                <span class="nav-link-text">
+                                    {item.title}
+                                    <f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if>
+                                    <f:if condition="{item.children}">
+                                        <span aria-hidden="true">&#9662;</span>
+                                    </f:if>
+                                </span>
                             </a>
                             <f:if condition="{item.children}">
                                 <ul class="dropdown-menu" aria-labelledby="nav-item-{item.data.uid}">

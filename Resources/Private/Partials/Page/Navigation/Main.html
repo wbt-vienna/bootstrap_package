@@ -36,8 +36,8 @@
                         <ul class="navbar-nav">
                     </f:then>
                     <f:else>
-                        <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
-                            <a href="{item.link}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}"{f:if(condition: item.children, then:' aria-haspopup="true" aria-expanded="false"')}>
+                        <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown')}">
+                            <a href="{f:if(condition: item.children, then: '#', else: item.link)}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}"{f:if(condition: item.children, then:' aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"')}>
                                 <f:if condition="{theme.navigation.icon.enable} && {item.icon}">
                                     <span class="nav-link-icon">
                                         <f:if condition="{item.icon.0.extension} === svg">

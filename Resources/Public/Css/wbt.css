@@ -1,0 +1,33 @@
+.navbar-mainnavigation {
+    flex-flow: wrap !important;
+}
+
+#wbt-header-logo {
+    height: 7em;
+}
+
+header .container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#mainnavigation .navbar-nav {
+    margin-left: -1rem !important;
+}
+
+#mainnavigation .navbar-nav .nav-link {
+    color: black !important;
+    font-weight: bold;
+}
+
+.logo-container {
+    justify-content: flex-start !important;
+}
+
+.logo-text {
+    font-size: 1.9em;
+    margin-left: 1.3em;
+    padding-left: 1.3em;
+    border-left: 1px solid gray;
+    font-weight: bold;
+}

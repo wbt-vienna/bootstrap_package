@@ -399,6 +399,10 @@ page {
         }
     }
 
+    includeCSS {
+        wbt = EXT:bootstrap_package/Resources/Public/Css/wbt.css
+    }
+
     includeJSLibs {
         modernizr = EXT:bootstrap_package/Resources/Public/Contrib/modernizr/modernizr.min.js
         modernizr.forceOnTop = 1

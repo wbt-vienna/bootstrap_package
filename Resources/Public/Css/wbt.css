@@ -2,10 +2,6 @@
     flex-flow: wrap !important;
 }
 
-#wbt-header-logo {
-    height: 7em;
-}
-
 header .container {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -13,11 +9,16 @@ header .container {
 
 #mainnavigation .navbar-nav {
     margin-left: -1rem !important;
+    flex-wrap: wrap !important;
 }
 
 #mainnavigation .navbar-nav .nav-link {
     color: black !important;
     font-weight: bold;
+}
+
+#wbt-header-logo {
+    height: 7em;
 }
 
 .logo-container {
@@ -30,4 +31,28 @@ header .container {
     padding-left: 1.3em;
     border-left: 1px solid gray;
     font-weight: bold;
+}
+
+@media (max-width: 50em) {
+    #wbt-header-logo {
+        height: 4em;
+    }
+
+    .logo-text {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    #wbt-header-logo {
+        height: 15vw;
+    }
+
+    .logo-text {
+        font-size: 4.1vw;
+    }
+
+    .container, .frame-container {
+        max-width: 100% !important;
+    }
 }

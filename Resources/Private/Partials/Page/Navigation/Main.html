@@ -56,6 +56,9 @@
                                     <f:if condition="{item.children}">
                                         <span aria-hidden="true">&#9662;</span>
                                     </f:if>
+                                    <f:if condition="{item.data.doktype} == 3">
+                                        <span aria-hidden="true">&#x2197;</span>
+                                    </f:if>
                                 </span>
                             </a>
                             <f:if condition="{item.children}">

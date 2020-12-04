@@ -37,6 +37,12 @@ header .container {
     font-weight: bold;
 }
 
+.menu-button-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
 @media (max-width: 50em) {
     #wbt-header-logo {
         height: 4em;
@@ -49,11 +55,11 @@ header .container {
 
 @media (max-width: 768px) {
     #wbt-header-logo {
-        height: 15vw;
+        height: 13vw;
     }
 
     .logo-text {
-        font-size: 4.1vw;
+        font-size: 3.9vw;
     }
 
     .container, .frame-container {

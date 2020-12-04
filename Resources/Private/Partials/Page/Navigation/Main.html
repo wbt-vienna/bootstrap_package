@@ -17,15 +17,14 @@
             <br/>
             <span>für Barrierefreie Technologien</span>
         </div>
-    </div>
-    <div>
-
-    </div>
-    <div class="container">
-        <f:if condition="{mainnavigation}">
+        <div class="menu-button-container">
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-label="{f:translate(key: 'togglenavigation', extensionName: 'bootstrap_package')}">
                 <span class="navbar-toggler-icon"></span>
             </button>
+        </div>
+    </div>
+    <div class="container">
+        <f:if condition="{mainnavigation}">
             <nav id="mainnavigation" class="collapse navbar-collapse">
                 <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
                 <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme}" />

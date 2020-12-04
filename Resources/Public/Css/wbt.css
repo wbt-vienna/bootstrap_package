@@ -1,3 +1,7 @@
+body {
+    word-wrap: break-word !important;
+}
+
 .navbar-mainnavigation {
     flex-flow: wrap !important;
 }

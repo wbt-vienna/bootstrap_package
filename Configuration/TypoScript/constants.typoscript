@@ -32,7 +32,7 @@
 page {
     logo {
         # cat=bootstrap package: logo/110/100; type=string; label=Logo: Leave blank to use website title from template instead
-        file = EXT:bootstrap_package/Resources/Public/Images/BootstrapPackage.svg
+        file = EXT:bootstrap_package/Resources/Public/Images/wbt/wbt-logo-only.svg
         # cat=bootstrap package: logo/110/110; type=string; label=Logo Inverted: Leave blank to use website title from template instead
         fileInverted = EXT:bootstrap_package/Resources/Public/Images/BootstrapPackageInverted.svg
         # cat=bootstrap package: logo/110/120; type=int+; label=Height: The image will not be resized!

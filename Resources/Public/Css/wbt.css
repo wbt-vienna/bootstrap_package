@@ -43,6 +43,10 @@ header .container {
     flex-grow: 1;
 }
 
+.navbar-mainnavigation .dropdown-toggle::after {
+    display: none !important;
+}
+
 @media (max-width: 50em) {
     #wbt-header-logo {
         height: 4em;
@@ -50,6 +54,12 @@ header .container {
 
     .logo-text {
         font-size: 1.5em;
+    }
+}
+
+@media (max-width: 992px) {
+    #mainnavigation .navbar-nav {
+        margin-left: 0rem !important;
     }
 }
 

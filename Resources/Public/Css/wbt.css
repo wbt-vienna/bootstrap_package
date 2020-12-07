@@ -25,6 +25,10 @@ header .container {
     height: 7em;
 }
 
+#wbt-fhtw-logo {
+    height: 4em;
+}
+
 .logo-container {
     justify-content: flex-start !important;
 }
@@ -37,7 +41,7 @@ header .container {
     font-weight: bold;
 }
 
-.menu-button-container {
+.flex-end {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
@@ -47,9 +51,13 @@ header .container {
     display: none !important;
 }
 
-@media (max-width: 50em) {
+@media (max-width: 50em), (max-width: 991px) {
     #wbt-header-logo {
         height: 4em;
+    }
+
+    #wbt-fhtw-logo {
+        height: 3em;
     }
 
     .logo-text {
@@ -57,15 +65,19 @@ header .container {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     #mainnavigation .navbar-nav {
         margin-left: 0rem !important;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     #wbt-header-logo {
         height: 13vw;
+    }
+
+    #wbt-fhtw-logo {
+        height: 7vw;
     }
 
     .logo-text {

@@ -223,6 +223,7 @@ page {
             logo {
                 file = {$page.logo.file}
                 fileInverted = {$page.logo.fileInverted}
+                fileFHTW = {$page.logo.fileFHTW}
                 height = {$page.logo.height}
                 width = {$page.logo.width}
                 linktitle = {$page.logo.linktitle}

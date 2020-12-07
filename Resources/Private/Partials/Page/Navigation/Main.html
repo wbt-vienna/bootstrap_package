@@ -29,7 +29,7 @@
     </div>
     <div class="container">
         <f:if condition="{mainnavigation}">
-            <nav id="mainnavigation" class="collapse navbar-collapse">
+            <nav id="mainnavigation" class="collapse navbar-collapse" tabindex="-1" accesskey="2">
                 <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
                 <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme}" />
                 <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />

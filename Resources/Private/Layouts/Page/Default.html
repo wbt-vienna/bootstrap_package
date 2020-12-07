@@ -4,14 +4,19 @@
 <div class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')}">
 
     <f:render partial="Structure/CookieConsent" arguments="{_all}" />
-    <a class="sr-only sr-only-focusable" href="#page-content">
-        <span>{f:translate(key: 'skiptomaincontent', extensionName: 'bootstrap_package')}</span>
-    </a>
+    <nav aria-label="Seitenbereiche" style="border-bottom: 1px solid lightgray; padding: 0.5em 0; margin-bottom: 0.5em">
+        <div class="container">
+            <a href="#page-content">Inhalt (Accesskey 1)</a>
+            <a href="#mainnavigation" class="ml-4">Menü (Accesskey 2)</a>
+        </div>
+    </nav>
+
+
     <f:render partial="Navigation/Main" arguments="{_all}" />
     <f:render section="Border" optional="true" />
     <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
 
-    <div id="page-content" class="bp-page-content main-section">
+    <div id="page-content" class="bp-page-content main-section" tabindex="-1" accesskey="1">
         <!--TYPO3SEARCH_begin-->
         <f:render section="Main" />
         <!--TYPO3SEARCH_end-->

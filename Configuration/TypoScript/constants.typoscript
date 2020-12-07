@@ -37,6 +37,8 @@ page {
         fileInverted = EXT:bootstrap_package/Resources/Public/Images/BootstrapPackageInverted.svg
         # cat=bootstrap package: logo/110/110; type=string; label=FHTW Logo: Leave blank to use website title from template instead
         fileFHTW = EXT:bootstrap_package/Resources/Public/Images/wbt/fhtw.svg
+        # cat=bootstrap package: logo/110/110; type=string; label=MA23 Logo: Leave blank to use website title from template instead
+        fileMA23 = EXT:bootstrap_package/Resources/Public/Images/wbt/ma23.jpg
         # cat=bootstrap package: logo/110/120; type=int+; label=Height: The image will not be resized!
         height = 52
         # cat=bootstrap package: logo/110/130; type=int+; label=Width: The image will not be resized!

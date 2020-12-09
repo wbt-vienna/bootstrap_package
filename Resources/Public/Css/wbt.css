@@ -2,6 +2,14 @@ body {
     word-wrap: break-word !important;
 }
 
+h1, h2, h3 {
+    margin: 0.8em 0 0.5em 0 !important;
+}
+
+.frame {
+    padding-top: 1.5rem !important;
+}
+
 .navbar-mainnavigation {
     flex-flow: wrap !important;
 }

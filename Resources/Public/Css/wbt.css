@@ -10,6 +10,22 @@ h1, h2, h3 {
     padding-top: 1.5rem !important;
 }
 
+a {
+    color: #287780;
+}
+
+.breadcrumb, .breadcrumb-section {
+    background-color: #FCFCFC !important;
+}
+
+main a, a:hover {
+    text-decoration: underline;
+}
+
+a.btn {
+    text-decoration: none;
+}
+
 .navbar-mainnavigation {
     flex-flow: wrap !important;
 }

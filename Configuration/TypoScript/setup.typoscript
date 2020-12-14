@@ -377,8 +377,8 @@ page {
         bootstrap_form = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.form.min.js
         bootstrap_swipe = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.swipe.min.js
         bootstrap_popover = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.popover.min.js
-        bootstrap_stickyheader = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.stickyheader.min.js
-        bootstrap_smoothscroll = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.smoothscroll.min.js
+        # bootstrap_stickyheader = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.stickyheader.min.js
+        # bootstrap_smoothscroll = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.smoothscroll.min.js
         bootstrap_lightbox = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.lightbox.min.js
         bootstrap_navbar = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.navbar.min.js
     }

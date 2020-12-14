@@ -1,30 +1,37 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:variable name="headerClass">bp-page-header navbar navbar-mainnavigation navbar-{theme.navigation.style}</f:variable>
-<f:variable name="headerClass">{headerClass}{f:if(condition: logo.normal, then:' navbar-has-image')}</f:variable>
-<f:variable name="headerClass">{headerClass}{f:if(condition: theme.navigation.type, else:' navbar-top', then:' navbar-{theme.navigation.type} navbar-fixed-{theme.navigation.type}')}</f:variable>
-<header id="page-header" class="{headerClass}">
-    <div class="container">
-        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-{f:if(condition: logo.normal, then: 'image', else: 'text')}" title="{settings.logo.linktitle}">
-            <f:if condition="{logo.normal}">
-                <f:then>
-                    <img class="navbar-brand-logo-normal" src="{f:uri.image(image: logo.normal)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
-                    <f:if condition="{logo.inverted}">
-                        <img class="navbar-brand-logo-inverted" src="{f:uri.image(image: logo.inverted)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
-                    </f:if>
-                </f:then>
-                <f:else>
-                    <span>{siteTitle}</span>
-                </f:else>
-            </f:if>
-        </f:link.page>
-        <f:if condition="{mainnavigation}">
+<header id="page-header" class="bp-page-header navbar navbar-mainnavigation navbar-{theme.navigation.style}{f:if(condition:settings.logo.file,then:' navbar-has-image')}{f:if(condition:theme.navigation.type, else:' navbar-top', then:' navbar-{theme.navigation.type} navbar-fixed-{theme.navigation.type}')}">
+    <div class="container logo-container" style="margin-bottom: 0">
+        <f:if condition="{settings.logo.file}">
+            <f:then>
+                <f:link.page pageUid="{rootPage}" title="{settings.logo.linktitle}" additionalAttributes="{aria-hidden:'true', tabindex: '-1'}">
+                    <img id="wbt-header-logo" src="{f:uri.image(src: settings.logo.file)}" alt="{logoAlt}">
+                </f:link.page>
+            </f:then>
+            <f:else>
+                <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-text" title="{settings.logo.linktitle}">{siteTitle}</f:link.page>
+            </f:else>
+        </f:if>
+        <div class="logo-text">
+            <span>Regionale Wissensdrehscheibe</span>
+            <br/>
+            <span>für Barrierefreie Technologien</span>
+        </div>
+        <div class="flex-end">
+            <a href="https://www.technikum-wien.at/" class="d-none d-lg-block" rel="noreferrer">
+                <img id="wbt-fhtw-logo" src="{f:uri.image(src: settings.logo.fileFHTW)}" alt="">
+                <span class="sr-only">FH Technikum Wien</span>
+            </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnavigation" aria-expanded="false" aria-label="{f:translate(key: 'togglenavigation', extensionName: 'bootstrap_package')}">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <nav id="mainnavigation" class="collapse navbar-collapse">
+        </div>
+    </div>
+    <div class="container">
+        <f:if condition="{mainnavigation}">
+            <nav id="mainnavigation" class="collapse navbar-collapse" tabindex="-1" accesskey="2">
                 <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
-                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme}" />
+                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme, data: data}" />
                 <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
             </nav>
         </f:if>
@@ -37,12 +44,12 @@
             <f:for each="{menu}" as="item">
                 <f:if condition="{item.spacer}">
                     <f:then>
-                        </ul>
-                        <ul class="navbar-nav">
+                        <!--/ul>
+                        <ul class="navbar-nav"-->
                     </f:then>
                     <f:else>
-                        <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
-                            <a href="{item.link}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}"{f:if(condition: item.children, then:' aria-haspopup="true" aria-expanded="false"')}>
+                        <li class="nav-item{f:if(condition: '{item.active} || ({data.uid} == {item.data.shortcut})', then:' active')}{f:if(condition: item.children, then:' dropdown')}">
+                            <a href="{f:if(condition: item.children, then: '#', else: item.link)}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} {f:if(condition: item.children, then:'     aria-expanded="false" data-toggle="dropdown"')} {f:if(condition: '{item.current} || ({data.uid} == {item.data.shortcut})', then:' aria-current="page"')}>
                                 <f:if condition="{theme.navigation.icon.enable} && {item.icon}">
                                     <span class="nav-link-icon">
                                         <f:if condition="{item.icon.0.extension} === svg">
@@ -55,7 +62,16 @@
                                         </f:if>
                                     </span>
                                 </f:if>
-                                <span class="nav-link-text">{item.title}<f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if></span>
+                                <span class="nav-link-text">
+                                    {item.title}
+                                    <f:if condition="{item.children}">
+                                        <span aria-hidden="true">&#9662;</span>
+                                    </f:if>
+                                    <f:if condition="{item.data.doktype} == 3">
+                                        <span aria-hidden="true">&#x2197;</span>
+                                        <span class="sr-only">externer Link</span>
+                                    </f:if>
+                                </span>
                             </a>
                             <f:if condition="{item.children}">
                                 <ul class="dropdown-menu" aria-labelledby="nav-item-{item.data.uid}">
@@ -66,7 +82,7 @@
                                             </f:then>
                                             <f:else>
                                                 <li>
-                                                    <a href="{child.link}" class="dropdown-item{f:if(condition: child.active, then:' active')}"{f:if(condition: child.target, then: ' target="{child.target}"')} title="{child.title}">
+                                                    <a href="{child.link}" class="dropdown-item{f:if(condition: child.active, then:' active')}"{f:if(condition: child.target, then: ' target="{child.target}"')} {f:if(condition: child.current, then:' aria-current="page"')}>
                                                         <f:if condition="{theme.navigation.dropdown.icon.enable} && {child.icon}">
                                                             <span class="dropdown-icon">
                                                                 <f:if condition="{child.icon.0.extension} === svg">
@@ -79,7 +95,7 @@
                                                                 </f:if>
                                                             </span>
                                                         </f:if>
-                                                        <span class="dropdown-text">{child.title}<f:if condition="{child.current}"> <span class="sr-only">(current)</span></f:if></span>
+                                                        <span class="dropdown-text">{child.title}</span>
                                                     </a>
                                                 </li>
                                             </f:else>

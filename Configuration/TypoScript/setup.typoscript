@@ -7,6 +7,7 @@
 ################
 #### HELPER ####
 ################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/Helper/ParseFunc.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/Helper/Block.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/Helper/PageClass.typoscript">
 
@@ -229,6 +230,10 @@ page {
         ################
         settings {
             logo {
+                file = {$page.logo.file}
+                fileInverted = {$page.logo.fileInverted}
+                fileFHTW = {$page.logo.fileFHTW}
+                fileMA23 = {$page.logo.fileMA23}
                 height = {$page.logo.height}
                 width = {$page.logo.width}
                 linktitle = {$page.logo.linktitle}
@@ -346,6 +351,11 @@ page {
                 enabled = 1
             }
         }
+    }
+
+    includeCSS {
+        wbt = EXT:bootstrap_package/Resources/Public/Css/wbt.css
+        wbt-footer = EXT:bootstrap_package/Resources/Public/Css/wbt-footer.css
     }
 
     includeJSLibs {

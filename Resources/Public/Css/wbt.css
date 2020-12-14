@@ -1,0 +1,114 @@
+body {
+    word-wrap: break-word !important;
+}
+
+h1, h2, h3 {
+    margin: 0.8em 0 0.5em 0 !important;
+}
+
+.frame {
+    padding-top: 1.5rem !important;
+}
+
+a {
+    color: #287780;
+}
+
+.breadcrumb, .breadcrumb-section {
+    background-color: #FCFCFC !important;
+}
+
+main a, a:hover {
+    text-decoration: underline;
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.navbar-mainnavigation {
+    flex-flow: wrap !important;
+}
+
+header .container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#mainnavigation .navbar-nav {
+    margin-left: -1rem !important;
+    flex-wrap: wrap !important;
+}
+
+#mainnavigation .navbar-nav .nav-link {
+    color: black !important;
+    font-weight: bold;
+}
+
+#wbt-header-logo {
+    height: 7em;
+}
+
+#wbt-fhtw-logo {
+    height: 4em;
+}
+
+.logo-container {
+    justify-content: flex-start !important;
+}
+
+.logo-text {
+    font-size: 1.9em;
+    margin-left: 1.3em;
+    padding-left: 1.3em;
+    border-left: 1px solid gray;
+    font-weight: bold;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.navbar-mainnavigation .dropdown-toggle::after {
+    display: none !important;
+}
+
+@media (max-width: 50em), (max-width: 991px) {
+    #wbt-header-logo {
+        height: 4em;
+    }
+
+    #wbt-fhtw-logo {
+        height: 3em;
+    }
+
+    .logo-text {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 991px) {
+    #mainnavigation .navbar-nav {
+        margin-left: 0rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #wbt-header-logo {
+        height: 13vw;
+    }
+
+    #wbt-fhtw-logo {
+        height: 7vw;
+    }
+
+    .logo-text {
+        font-size: 3.9vw;
+    }
+
+    .container, .frame-container {
+        max-width: 100% !important;
+    }
+}

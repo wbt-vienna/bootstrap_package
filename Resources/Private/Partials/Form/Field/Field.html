@@ -8,9 +8,9 @@
             <f:format.raw>
                 {elementContent}
                 <f:if condition="{validationResults.flattenedErrors}">
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback" role="alert">
                         <f:for each="{validationResults.errors}" as="error">
-                            {formvh:translateElementError(element: element, error: error)}
+                            <f:translate key="validator.{element.identifier}.{error.code}" extensionName="bootstrap_package" />
                             <br>
                         </f:for>
                     </div>

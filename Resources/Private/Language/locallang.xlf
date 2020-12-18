@@ -4,6 +4,22 @@
           product-name="bootstrap_package">
         <header/>
         <body>
+            <!-- Validation -->
+            <trans-unit id="validator.name.1221560718">
+                <source>Bitte geben Sie einen Namen ein.</source>
+            </trans-unit>
+            <trans-unit id="validator.email.1221560718">
+                <source>Bitte geben Sie eine E-Mail Adresse ein.</source>
+            </trans-unit>
+            <trans-unit id="validator.email.1221559976">
+                <source>Bitte geben Sie eine gültige E-Mail Adresse ein.</source>
+            </trans-unit>
+            <trans-unit id="validator.comment.1221560718">
+                <source>Bitte geben Sie einen Kommentar ein.</source>
+            </trans-unit>
+            <trans-unit id="validator.comment.1238108068">
+                <source>Der eingegebene Kommentar muss länger als 5 Zeichen sein.</source>
+            </trans-unit>
 
             <trans-unit id="skiptomaincontent">
                 <source>Skip to main content</source>

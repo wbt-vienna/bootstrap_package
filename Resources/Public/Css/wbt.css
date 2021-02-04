@@ -79,6 +79,12 @@ header .container {
     display: none !important;
 }
 
+.btn-primary:hover {
+    color: #2b2b2b !important;
+    background-color: #97d8de !important;
+    border-color: #97d8de !important;
+}
+
 @media (max-width: 50em), (max-width: 991px) {
     #wbt-header-logo {
         height: 4em;

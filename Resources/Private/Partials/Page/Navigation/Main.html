@@ -49,7 +49,7 @@
                     </f:then>
                     <f:else>
                         <li class="nav-item{f:if(condition: '{item.active} || ({data.uid} == {item.data.shortcut})', then:' active')}{f:if(condition: item.children, then:' dropdown')}">
-                            <a href="{f:if(condition: item.children, then: '#', else: item.link)}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} {f:if(condition: item.children, then:'     aria-expanded="false" data-toggle="dropdown"')} {f:if(condition: '{item.current} || ({data.uid} == {item.data.shortcut})', then:' aria-current="page"')}>
+                            <a href="{f:if(condition: item.children, then: '#', else: item.link)}" id="nav-item-{item.data.uid}" class="nav-link-text nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} {f:if(condition: item.children, then:'     aria-expanded="false" data-toggle="dropdown"')} {f:if(condition: '{item.current} || ({data.uid} == {item.data.shortcut})', then:' aria-current="page"')}>
                                 <f:if condition="{theme.navigation.icon.enable} && {item.icon}">
                                     <span class="nav-link-icon">
                                         <f:if condition="{item.icon.0.extension} === svg">
@@ -62,15 +62,13 @@
                                         </f:if>
                                     </span>
                                 </f:if>
-                                <span class="nav-link-text">
-                                    {item.title}
-                                    <f:if condition="{item.children}">
-                                        <span aria-hidden="true">&#9662;</span>
-                                    </f:if>
-                                    <f:if condition="{item.data.doktype} == 3">
-                                        <span aria-hidden="true">&#x2197;</span>
-                                    </f:if>
-                                </span>
+                                {item.title}
+                                <f:if condition="{item.children}">
+                                    <span aria-hidden="true">&#9662;</span>
+                                </f:if>
+                                <f:if condition="{item.data.doktype} == 3">
+                                    <span aria-hidden="true">&#x2197;</span>
+                                </f:if>
                             </a>
                             <f:if condition="{item.children}">
                                 <ul class="dropdown-menu" aria-labelledby="nav-item-{item.data.uid}">

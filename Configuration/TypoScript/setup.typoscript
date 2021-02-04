@@ -381,6 +381,7 @@ page {
         # bootstrap_smoothscroll = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.smoothscroll.min.js
         bootstrap_lightbox = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.lightbox.min.js
         bootstrap_navbar = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/bootstrap.navbar.min.js
+        wbt_custom = EXT:bootstrap_package/Resources/Public/JavaScript/Dist/wbt_custom.js
     }
 }
 

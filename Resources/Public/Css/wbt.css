@@ -85,6 +85,35 @@ header .container {
     border-color: #97d8de !important;
 }
 
+.carousel-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-content .quote-container {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 1.5em 1.5em rgba(0,0,0,0.5);
+    border-radius: 1em;
+    max-width: 625px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.carousel-content .quote-container blockquote {
+    font-size: 2.7em;
+    padding: 0;
+    border: none;
+    margin: 0 0 0.5em 0;
+}
+
+.carousel-content .quote-container .quote-author {
+    font-size: 1.7em;
+}
+
 @media (max-width: 50em), (max-width: 991px) {
     #wbt-header-logo {
         height: 4em;
@@ -102,6 +131,18 @@ header .container {
 @media (max-width: 991px) {
     #mainnavigation .navbar-nav {
         margin-left: 0rem !important;
+    }
+
+    .carousel-content .quote-container {
+        max-width: 490px;
+    }
+
+    .carousel-content .quote-container blockquote {
+        font-size: 2em;
+    }
+
+    .carousel-content .quote-container .quote-author {
+        font-size: 1.5em;
     }
 }
 
